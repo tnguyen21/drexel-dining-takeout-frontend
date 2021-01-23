@@ -1,17 +1,54 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
+import React from "react";
+import ReactDOM from "react-dom";
+import { BrowserRouter, Route, Switch, Link } from "react-router-dom";
+import "./styles/index.css";
 
-ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
-  document.getElementById('root')
-);
+function Home() {
+  return <h1 className="text-lg">Home</h1>;
+}
 
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();
+function About() {
+  return <h2 className="text-lg">About</h2>;
+}
+
+function Users() {
+  return <h2 className="text-lg">Users</h2>;
+}
+
+function App() {
+  return (
+    <BrowserRouter>
+      <div>
+        <nav>
+          <ul>
+            <li>
+              <Link to="/">Home</Link>
+            </li>
+            <li>
+              <Link to="/order">About</Link>
+            </li>
+            <li>
+              <Link to="/service">Users</Link>
+            </li>
+          </ul>
+        </nav>
+        <Switch>
+          <Route exact path="/">
+            {/* <Landing /> */}
+            <Home />
+          </Route>
+          <Route exact path="/order">
+            {/* <Order /> */}
+            <About />
+          </Route>
+          <Route exact path="/service">
+            {/* <Service /> */}
+            <Users />
+          </Route>
+        </Switch>
+      </div>
+    </BrowserRouter>
+  );
+}
+
+ReactDOM.render(<App />, document.getElementById("root"));
