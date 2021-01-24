@@ -2,7 +2,7 @@ import React from "react";
 
 export default function Landing() {
   return (
-    <body class="gradient leading-relaxed tracking-wide flex flex-col">
+    <div class="gradient leading-relaxed tracking-wide flex flex-col">
       <div class="container mx-auto h-screen">
         <div class="text-center px-3 lg:px-0">
           <h1 class="my-4 text-2xl md:text-3xl lg:text-5xl font-black leading-tight">
@@ -79,6 +79,6 @@ export default function Landing() {
           </div>
         </div>
       </section>
-    </body>
+    </div>
   );
 }
