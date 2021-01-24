@@ -2,18 +2,19 @@ import React from "react";
 import ReactDOM from "react-dom";
 import { BrowserRouter, Route, Switch, Link } from "react-router-dom";
 import Header from "./components/Header/Header";
+import Landing from "./components/Landing/Landing";
 import "./styles/index.css";
 
 function Home() {
-  return <h1 className="text-lg">Home</h1>;
+  return <h1>Home</h1>;
 }
 
 function About() {
-  return <h2 className="text-lg">Order</h2>;
+  return <h1>Order</h1>;
 }
 
 function Users() {
-  return <h2 className="text-lg">Serve</h2>;
+  return <h1>Serve</h1>;
 }
 
 function App() {
@@ -22,8 +23,8 @@ function App() {
       <Header />
       <Switch>
         <Route exact path="/">
-          {/* <Landing /> */}
-          <Home />
+          <Landing />
+          {/* <Home /> */}
         </Route>
         <Route exact path="/order">
           {/* <Order /> */}
