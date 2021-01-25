@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 export default function Landing() {
   return (
@@ -12,18 +13,18 @@ export default function Landing() {
             Skip the wait lines at Urban!
           </p>
 
-          <a
-            href="/order"
+          <Link
+            to="/order"
             class="mx-auto lg:mx-0 hover:underline text-gray-800 font-extrabold rounded my-2 md:my-6 py-4 px-8 shadow-lg w-48"
           >
             Submit an Order
-          </a>
-          <a
-            href="/service"
+          </Link>
+          <Link
+            to="/service"
             class="inline-block mx-auto lg:mx-0 hover:underline bg-transparent text-gray-600 font-extrabold my-2 md:my-6 py-2 lg:py-4 px-8"
           >
             View Submitted Orders
-          </a>
+          </Link>
         </div>
       </div>
 
