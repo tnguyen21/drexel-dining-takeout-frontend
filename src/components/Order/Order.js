@@ -11,10 +11,15 @@ export default function Order() {
   let [order, changeOrder] = useState([]);
   let [customerName, setCustomerName] = useState("");
 
+  function handleChange(e) {
+    setCustomerName(e.target.value);
+    console.log(customerName);
+  }
+
   function writerOrder() {
     db.collection("Orders").add({
       status: 0,
-      student_name: "John Doe",
+      student_name: customerName,
       order_items: order,
       order_time: firebase.firestore.FieldValue.serverTimestamp(),
     });
@@ -37,6 +42,15 @@ export default function Order() {
           >
             Send Order!
           </button>
+        </div>
+        <div className="text-center mt-2">
+          Name:{" "}
+          <input
+            className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline border-blue-300"
+            type="text"
+            value={customerName}
+            onChange={(e) => handleChange(e)}
+          ></input>
         </div>
       </div>
     </div>
