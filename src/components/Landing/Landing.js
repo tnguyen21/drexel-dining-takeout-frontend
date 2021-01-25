@@ -12,19 +12,18 @@ export default function Landing() {
             Skip the wait lines at Urban!
           </p>
 
-          <button class="mx-auto lg:mx-0 hover:underline text-gray-800 font-extrabold rounded my-2 md:my-6 py-4 px-8 shadow-lg w-48">
-            Sign Up
-          </button>
           <a
-            href="#"
+            href="/order"
+            class="mx-auto lg:mx-0 hover:underline text-gray-800 font-extrabold rounded my-2 md:my-6 py-4 px-8 shadow-lg w-48"
+          >
+            Submit an Order
+          </a>
+          <a
+            href="/service"
             class="inline-block mx-auto lg:mx-0 hover:underline bg-transparent text-gray-600 font-extrabold my-2 md:my-6 py-2 lg:py-4 px-8"
           >
-            View Additional Action
+            View Submitted Orders
           </a>
-        </div>
-
-        <div class="flex items-center w-full mx-auto content-end">
-          <div class="browser-mockup flex flex-1 m-6 md:px-0 md:m-12 bg-white w-1/2 rounded shadow-xl"></div>
         </div>
       </div>
 
