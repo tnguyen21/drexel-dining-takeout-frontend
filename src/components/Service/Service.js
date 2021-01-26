@@ -1,4 +1,4 @@
-import React, from "react";
+import React from "react";
 import { useCollectionData } from "react-firebase-hooks/firestore";
 import firebase from "../Firestore/Firestore";
 
@@ -13,7 +13,7 @@ export default function Service() {
       .doc(order.student_name)
       .set({ ...order, status: 1 }, { merge: true });
     if (res) {
-      console.log("Order set to one!")
+      console.log("Order set to one!");
     }
   }
 

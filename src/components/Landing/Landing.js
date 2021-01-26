@@ -29,7 +29,7 @@ export default function Landing() {
       </div>
 
       <section className="bg-gray-100 border-b py-8">
-        <div className="container max-w-5xl mx-auto m-8">
+        <div className="container mx-auto m-8">
           <h2 className="w-full my-2 text-3xl font-black leading-tight text-center text-gray-800">
             How It Works
           </h2>
@@ -37,51 +37,51 @@ export default function Landing() {
             <div className="h-1 mx-auto gradient w-64 opacity-25 my-0 py-0 rounded-t"></div>
           </div>
 
-          <div className="flex flex-wrap">
-            <div className="w-5/6 sm:w-1/2 p-6">
+          <div className="flex flex-wrap justify-center">
+            <div className="max-w-sm sm:w-1/2 p-6 text-center">
               <h3 className="text-3xl text-gray-800 font-bold leading-none mb-3">
-                Lorem ipsum dolor sit amet
+                Order on your phone
               </h3>
-              <p className="text-gray-600 mb-8">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam
-                at ipsum eu nunc commodo posuere et sit amet ligula.
-                <br />
-                <br />
-                Images from:
-                <a
-                  className="text-orange-500 underline"
-                  href="https://undraw.co/"
-                >
-                  undraw.co
-                </a>
+              <i class="fas fa-mobile-alt fa-10x"></i>
+              <p className="text-gray-600 mb-8 mt-2">
+                Place an order on the app based on weekly menu items at Urban.
               </p>
             </div>
-          </div>
-
-          <div className="flex flex-wrap flex-col-reverse sm:flex-row">
-            <div className="w-full sm:w-1/2 p-6 mt-6">
-              <div className="align-middle">
-                <h3 className="text-3xl text-gray-800 font-bold leading-none mb-3">
-                  Lorem ipsum dolor sit amet
-                </h3>
-                <p className="text-gray-600 mb-8">
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                  Aliquam at ipsum eu nunc commodo posuere et sit amet ligula.
-                  <br />
-                  <br />
-                  Images from:
-                  <a
-                    className="text-orange-500 underline"
-                    href="https://undraw.co/"
-                  >
-                    undraw.co
-                  </a>
-                </p>
-              </div>
+            <div className="max-w-sm sm:w-1/2 p-6 text-center">
+              <h3 className="text-3xl text-gray-800 font-bold leading-none mb-3">
+                Swipe in at Urban
+              </h3>
+              <i class="fas fa-id-card fa-10x"></i>
+              <p className="text-gray-600 mb-8 mt-2">
+                Swipe your card when you enter Urban.
+              </p>
+            </div>
+            <div className="max-w-sm sm:w-1/2 p-6 text-center">
+              <h3 className="text-3xl text-gray-800 font-bold leading-none mb-3">
+                Pick up your food
+              </h3>
+              <i class="fas fa-shopping-bag fa-10x"></i>
+              <p className="text-gray-600 mb-8 mt-2">
+                Go to the designated food pickup area and pickup the bag with
+                all your items. It's really as easy as that!
+              </p>
             </div>
           </div>
         </div>
       </section>
+      <footer className="text-center mt-4">
+        <small>
+          Made with ❤ by{" "}
+          <a
+            className="text-blue-500"
+            href="https://tommynguyen.dev/"
+            target="_blank"
+          >
+            Tommy Nguyen
+          </a>
+          , Allen Cai, Katy Redmond, Christina Gian, & Natasha Karnoto
+        </small>
+      </footer>
     </div>
   );
 }
