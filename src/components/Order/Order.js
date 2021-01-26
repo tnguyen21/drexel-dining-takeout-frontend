@@ -70,6 +70,12 @@ export default function Order() {
             Send Order!
           </button>
         </div>
+        <div className="border-2 border-solid mt-2 mb-4 p-2" id="cart">
+          <h2 className="font-semibold">Your Order</h2>
+          {order.map((item) => {
+            return <div>{item.itemName}</div>;
+          })}
+        </div>
       </div>
     </div>
   );
