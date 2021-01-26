@@ -14,18 +14,20 @@ export default function Order() {
   }
 
   function writerOrder() {
-    db.collection("Orders").add({
-      status: 0,
-      student_name: customerName,
-      order_items: order,
-      order_time: firebase.firestore.FieldValue.serverTimestamp(),
-    });
+    db.collection("Orders").doc(customerName).set(
+      {
+        status: 0,
+        student_name: customerName,
+        order_items: order,
+        order_time: firebase.firestore.FieldValue.serverTimestamp(),
+      },
+      { merge: true }
+    );
     changeOrder([]); // reset state after user submits order
     setCustomerName("");
   }
 
   function addToOrder(item) {
-    console.log(order);
     return () => changeOrder([...order, item]);
   }
 
