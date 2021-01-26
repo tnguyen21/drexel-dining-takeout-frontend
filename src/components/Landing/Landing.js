@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 export default function Landing() {
   return (
     <div className="gradient leading-relaxed tracking-wide flex flex-col">
-      <div className="container mx-auto h-screen">
+      <div className="container mx-auto pb-5">
         <div className="text-center px-3 lg:px-0">
           <h1 className="my-4 text-2xl md:text-3xl lg:text-5xl font-black leading-tight">
             🐉 Grab and Go
@@ -30,8 +30,8 @@ export default function Landing() {
 
       <section className="bg-gray-100 border-b py-8">
         <div className="container max-w-5xl mx-auto m-8">
-          <h2 className="w-full my-2 text-5xl font-black leading-tight text-center text-gray-800">
-            Title
+          <h2 className="w-full my-2 text-3xl font-black leading-tight text-center text-gray-800">
+            How It Works
           </h2>
           <div className="w-full mb-4">
             <div className="h-1 mx-auto gradient w-64 opacity-25 my-0 py-0 rounded-t"></div>

@@ -1,5 +1,4 @@
 import React from "react";
-import menuItems from "../../helpers/mock-menu";
 
 export default function MenuItem({ itemName, station, mealTime }) {
   return (
