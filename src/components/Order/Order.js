@@ -1,19 +1,16 @@
 import React, { useState } from "react";
+import { menuItems } from "../../helpers/mock-menu";
 import firebase from "../Firestore/Firestore";
-import Menu from "../Menu/Menu";
+import MenuItem from "../MenuItem/MenuItem";
 
 export default function Order() {
   const db = firebase.firestore();
-  db.settings({
-    timestampsInSnapshots: true,
-  });
 
   let [order, changeOrder] = useState([]);
   let [customerName, setCustomerName] = useState("");
 
   function handleChange(e) {
     setCustomerName(e.target.value);
-    console.log(customerName);
   }
 
   function writerOrder() {
@@ -23,7 +20,13 @@ export default function Order() {
       order_items: order,
       order_time: firebase.firestore.FieldValue.serverTimestamp(),
     });
-    console.log("order sent!");
+    changeOrder([]); // reset state after user submits order
+    setCustomerName("");
+  }
+
+  function addToOrder(item) {
+    console.log(order);
+    return () => changeOrder([...order, item]);
   }
 
   return (
@@ -33,7 +36,31 @@ export default function Order() {
           Order
         </h1>
         <div className="grid grid-cols-2">
-          <Menu />
+          {menuItems.map((item) => {
+            return (
+              <div className="col-span-2 md:col-span-1 m-4 min-w-max">
+                <button
+                  className="hover:shadow-lg min-w-max"
+                  onClick={addToOrder(item)}
+                >
+                  <MenuItem
+                    itemName={item.itemName}
+                    station={item.station}
+                    mealTime={item.mealtime}
+                  />
+                </button>
+              </div>
+            );
+          })}
+        </div>
+        <div className="text-center mt-2">
+          Name:
+          <input
+            className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline border-blue-300"
+            type="text"
+            value={customerName}
+            onChange={(e) => handleChange(e)}
+          ></input>
         </div>
         <div className="text-center">
           <button
@@ -42,15 +69,6 @@ export default function Order() {
           >
             Send Order!
           </button>
-        </div>
-        <div className="text-center mt-2">
-          Name:{" "}
-          <input
-            className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline border-blue-300"
-            type="text"
-            value={customerName}
-            onChange={(e) => handleChange(e)}
-          ></input>
         </div>
       </div>
     </div>
